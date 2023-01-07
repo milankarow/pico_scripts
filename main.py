@@ -11,6 +11,7 @@ from led_matrix import NeoPixelMatrix
 astick = AnalogStick(ADC(27), ADC(26))
 pixelpin = 16
 matrix = NeoPixelMatrix(Pin(pixelpin, Pin.OUT),16,16)
+matrix.clear()
 
 
 
