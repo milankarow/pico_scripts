@@ -55,17 +55,17 @@ class GroveUltrasonicRanger(object):
             if dist:
                 return dist
  
-Grove = GroveUltrasonicRanger
+# Grove = GroveUltrasonicRanger
  
-def main():
+# def main():
     
-    pin = 15
-    sonar = GroveUltrasonicRanger(pin)
+#     pin = 16
+#     sonar = GroveUltrasonicRanger(pin)
  
-    print('Detecting distance...')
-    while True:
-        print('{} cm'.format(sonar.get_distance()))
-        time.sleep(0.5)
+#     print('Detecting distance...')
+#     while True:
+#         print('{} cm'.format(sonar.get_distance()))
+#         time.sleep(0.5)
  
 
-main()
+# main()

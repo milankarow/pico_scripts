@@ -9,11 +9,11 @@ is_pressed = False
 zahl = 0
 
 pixelpin = 16
-leds = 64
+leds = 128
 
-red = 2
-blue = 1
-green = 1
+red = 50
+blue = 40
+green = 40
 
 speed = 50
 
@@ -82,8 +82,9 @@ def shiftRight(leds):
 
 
 clear()
+np.write()
 #rblist = fillRandomColors(leds,0.01)
-rblist = getRainbow(leds,0.01)
+rblist = getRainbow(leds,1.0)
 for v in range (0,leds):
     np[v] = rblist[v]
 #np = getRainbow(leds)

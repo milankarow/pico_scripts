@@ -1,34 +1,25 @@
-import machine
-from machine import Pin
-import utime
+from machine import Pin, ADC
+from time import sleep
 from neopixel import NeoPixel
 import math
+from random import randint
+from analog_stick import AnalogStick
+from led_matrix import NeoPixelMatrix
 
-pixelpin = 28
-leds = 16
 
-red = 100
-blue = 100
-green = 100
 
-speed = 50
+astick = AnalogStick(ADC(27), ADC(26))
+pixelpin = 16
+matrix = NeoPixelMatrix(Pin(pixelpin, Pin.OUT),16,16)
 
-np = NeoPixel(Pin(pixelpin, Pin.OUT), leds)
 
-xpin = machine.ADC(27)
-ypin = machine.ADC(26)
+
 
 while True:
-    for i in range(leds):
-        np[i] = (0,0,0)
-        
-    xcoord = xpin.read_u16()-32600
-    ycoord = ypin.read_u16()-33200
-    angle = math.atan2(xcoord,ycoord) + math.pi
-    active_led = int((16*angle/(2*math.pi)))
-    #print(active_led)
-    np[active_led] = (red,green,blue)
-    np.write()
-    #print(':::')
-    utime.sleep(0.1)
+    x, y = astick.getCoords()
+    matrix.setPixel(min(int((x+1)*8), 15),min(int((y+1)*8),15), 160*(x+1.1),1.0, 0.1)    
+    print(astick.getCoords())
+         
+
+
 

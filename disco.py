@@ -22,4 +22,4 @@ while True:
         #np[i] = (red*(i+1),green*(i+1),blue*(i+1))
         np[i] =(random.randint(0,100),random.randint(0,100),random.randint(0,100) )
     np.write()
-    utime.sleep(0.02)
+    utime.sleep(1)
