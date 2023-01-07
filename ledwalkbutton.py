@@ -54,6 +54,8 @@ def hsv2rgb(h, s, v):
         rgb = (x, 0, c)
     elif 0.0 <= h < 360:
         rgb = (c, 0, x)
+    else:
+        rgb = (0,0,0)
         
     return list(map(lambda n: (n + m) * 255, rgb)) 
 
