@@ -64,8 +64,3 @@ class NeoPixelMatrix(object):
             rgb = (0,0,0) #should be unreachable, only there to prevent unbound warning
             
         return tuple(map(lambda n: int((n + m) * 255), rgb)) 
-
-
-
-
-
